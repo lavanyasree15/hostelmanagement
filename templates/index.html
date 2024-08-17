@@ -1,0 +1,213 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width" />
+      <title>Hostel portal</title>
+      <link href="{% static "css/responsee.css" %}" rel="stylesheet">
+      <link href="{% static "css/owl.carousel.css" %}" rel="stylesheet">
+      <link href="{% static "css/owl.theme.css" %}" rel="stylesheet">
+      <!-- CUSTOM STYLE -->
+      <link rel="stylesheet" href="{% static "css/template-style.css" %}" >
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <script type="text/javascript" src="{% static "js/jquery-1.8.3.min.js" %}"></script>
+      <script type="text/javascript" src="{% static "js/jquery-ui.min.js" %}" ></script>
+      <script type="text/javascript" src="{% static "js/modernizr.js" %}" ></script>
+      <script type="text/javascript" src="{% static "js/responsee.js" %}" ></script>
+      <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+      <![endif]-->
+   </head>
+   <body class="size-1140">
+      <!-- TOP NAV WITH LOGO -->
+      <header>
+         <nav>
+            <div class="line">
+               <div class="top-nav">
+                  <div class="logo hide-l">
+                     HOSTEL <br /><strong>PORTAL</strong>
+                  </div>
+                  <p class="nav-text">Custom menu text</p>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="right top-ul chevron">
+                       {% if user.is_authenticated %}<li><a href="#"><br>
+                       Hi {{ user.username }}!</a></li>
+                       {% endif %}
+                        <li><a href="/index/"><br>Home</a>
+                        </li>
+                        <li>
+                           <a><br>Registrations</a>
+                           <ul>
+                            {% if user.is_authenticated %}
+                            <li><a href="/registration/1/"><br>Aryabhatta</a></li>
+                            <li><a href="/registration/2/"><br>C.V Raman</a></li>
+                            <li><a href="/registration/3/"><br>Dhanrajgiri</a></li>
+                            <li><a href="/registration/4/"><br>GMSC NEW</a></li>
+                            <li><a href="/registration/5/"><br>GMSC OLD</a></li>
+                            <li><a href="/registration/6/"><br>Limbdi</a></li>
+                            <li><a href="/registration/7/"><br>Morvi</a></li>
+                            <li><a href="/registration/8/"><br>Rajputana</a></li>
+                            <li><a href="/registration/9/"><br>Ramanujan</a></li>
+                            <li><a href="/registration/10/"><br>Saluja</a></li>
+                            <li><a href="/registration/11/"><br>S.C Dey</a></li>
+                            <li><a href="/registration/12/"><br>S.N Bose</a></li>
+                            <li><a href="/registration/13/"><br>Vishwakarma</a></li>
+                            <li><a href="/registration/14/"><br>Vishweshvarayya</a></li>
+                            <li><a href="/registration/15/"><br>Vivekananda</a></li>
+                            {% else %}
+                            <li><a href="/login">Please Log In first</a></li>
+                            {% endif %}
+                           </ul>
+                        </li>
+                        {% if user.is_authenticated %}
+                          <li><a href="/logout/"><br>Logout</a></li>
+                        {% else %}
+                          <li><a href="/signup/"><br>Sign up</a></li>
+                          <li><a href="/login/"><br>Sign in</a></li>
+                        {% endif %}
+                     </ul>
+                  </div>
+                  <ul class="s-12 l-2">
+                     <li class="logo hide-s hide-m">
+                        <a href="#">HOSTEL <br /><strong>PORTAL</strong></a>
+                     </li>
+                  </ul>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="top-ul chevron">
+                        <li><a href="/gallery/"><br>Gallery</a>
+                        </li>
+                        <li><a href="/discussion/">Discussion & <br>grievances</a></li>
+                       <li>
+                           <a><br>Hostels</a>
+                           <ul>
+                              <li><a href="#"><br>Dhanrajgiri</a></li>
+                              <li><a href="#"><br>C.V Raman</a></li>
+                              <li><a href="#"><br>Ramanujan</a></li>
+                              <li><a href="#"><br>S.N Bose</a></li>
+                              <li><a href="#"><br>Aryabhatta</a></li>
+                             </li>
+                           </ul>
+                        </li>
+                        <li><a href="/contact/"><br>Contact</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <section>
+         <!-- CAROUSEL -->
+         <div id="carousel">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+               <div class="item">
+                  <img src="{% static "img/first.jpg" %}" alt="">
+               </div>
+               <div class="item">
+                  <img src="{% static "img/second.jpg" %}" alt="">
+               </div>
+               <div class="item">
+                  <img src="{% static "img/third.jpg" %}"  alt="">
+               </div>
+            </div>
+         </div>
+            <!-- SECOND BLOCK -->
+         <div id="second-block">
+            <div class="line">
+               <div class="margin-bottom">
+                  <div class="margin">
+                     <article class="s-12 l-8 center">
+                        <h1>Amazing title</h1>
+                        <p class="margin-bottom">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        </p>
+                        <a class="button s-12 l-4 center" href="product.html">Read more</a>
+                     </article>
+                  </div>
+               </div>
+            </div>
+         </div>
+        <!-- GALLERY -->
+         <div id="third-block">
+            <div class="line">
+               <h2> Gallery </h2>
+               <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+               </p>
+               <div class="margin">
+                  <div class="s-12 m-6 l-3">
+                     <img src="{% static "img/first-small.jpg" %}"  alt="alternative text">
+                     <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                     </p>
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                     <img src="{% static "img/second-small.jpg" %}"  alt="alternative text">
+                     <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                     </p>
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                     <img src="{% static "img/third-small.jpg" %}"  alt="alternative text">
+                     <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                     </p>
+                  </div>
+                  <div class="s-12 m-6 l-3">
+                     <img src="{% static "img/fourth-small.jpg" %}"  alt="alternative text">
+                     <p class="subtitile">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="fourth-block">
+            <div class="line">
+               <div id="owl-demo2" class="owl-carousel owl-theme">
+                  <div class="item">
+                     <h2>About</h2>
+                     <p class="s-12 m-12 l-8 center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                     </p>
+                  </div>
+                  <div class="item">
+                     <h2>Contacts</h2>
+                     <p class="s-12 m-12 l-8 center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                     </p>
+                  </div>
+                 </div>
+            </div>
+         </div>
+      </section>
+      <!-- FOOTER -->
+      <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright , IIT BHU
+               </p>
+            </div>
+            <div class="s-12 l-6">
+               <p class="right">
+                  <a class="right" href="http://iitbhu.ac.in/" >Design and coding by _ Team</a>
+               </p>
+            </div>
+         </div>
+      </footer>
+      <script type="text/javascript" src="{% static "js/owl.carousel.js" %}" ></script>
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {
+           $("#owl-demo").owlCarousel({
+            slideSpeed : 300,
+            autoPlay : true,
+            navigation : false,
+            pagination : false,
+            singleItem:true
+           });
+           $("#owl-demo2").owlCarousel({
+            slideSpeed : 450,
+            autoPlay : true,
+            navigation : false,
+            pagination : true,
+            singleItem:true
+           });
+         });
+
+      </script>
+   </body>
+</html>

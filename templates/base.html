@@ -1,0 +1,162 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+
+      <link   rel="stylesheet" href="{% static "base/css/responsee.css" %}" >
+      <link   rel="stylesheet" href="{% static "base/css/components.css" %}" >
+      <link   rel="stylesheet" href="{% static "base/css/template-style.css" %}" >
+      <link   rel="stylesheet" href="{% static "base/owl-carousel/owl.carousel.css" %}" >
+      <link   rel="stylesheet" href="{% static "base/owl-carousel/owl.theme.css" %}" >
+      <script type="text/javascript" src="{% static "base/js/jquery-1.8.3.min.js" %}" ></script>
+      <script type="text/javascript" src="{% static "base/js/jquery-ui.min.js" %}" ></script>
+      <script type="text/javascript" src="{% static "base/js/modernizr.js" %}" ></script>
+      <script type="text/javascript" src="{% static "base/js/responsee.js" %}" ></script>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<!-- TOP NAV WITH LOGO -->
+     <header>
+         <nav>
+            <div class="line">
+               <div class="top-nav">
+                  <div class="logo hide-l">
+                     DESIGN <br /><strong>THEME</strong>
+                  </div>
+                  <p class="nav-text">Custom menu text</p>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="right top-ul chevron">
+                        <li>{% if user.is_authenticated %}
+                        Hi {{ user.username }}!
+                        {% endif %}</li>
+                        <li><a href="/index/"><br>Home<br></a></li>
+                       <li>
+                           <a><br>Registrations</a>
+                           <ul>
+                            {% if user.is_authenticated %}
+                            <li><a href="/registration/1/"><br>Aryabhatta</a></li>
+                            <li><a href="/registration/2/"><br>C.V Raman</a></li>
+                            <li><a href="/registration/3/"><br>Dhanrajgiri</a></li>
+                            <li><a href="/registration/4/"><br>GMSC NEW</a></li>
+                            <li><a href="/registration/5/"><br>GMSC OLD</a></li>
+                            <li><a href="/registration/6/"><br>Limbdi</a></li>
+                            <li><a href="/registration/7/"><br>Morvi</a></li>
+                            <li><a href="/registration/8/"><br>Rajputana</a></li>
+                            <li><a href="/registration/9/"><br>Ramanujan</a></li>
+                            <li><a href="/registration/10/"><br>Saluja</a></li>
+                            <li><a href="/registration/11/"><br>S.C Dey</a></li>
+                            <li><a href="/registration/12/"><br>S.N Bose</a></li>
+                            <li><a href="/registration/13/"><br>Vishwakarma</a></li>
+                            <li><a href="/registration/14/"><br>Vishweshvarayya</a></li>
+                            <li><a href="/registration/15/"><br>Vivekananda</a></li>
+                            {% else %}
+                            <li><a href="/login">Please Log In first</a></li>
+                            {% endif %}
+                           </ul>
+                        </li>
+                        {% if user.is_authenticated %}
+                          <li><a href="/logout/"><br>Logout</a></li>
+                        {% else %}
+                          <li><a href="/signup/"><br>Signup</a></li>
+                          <li><a href="/login/"><br>Signin</a></li>
+                        {% endif %}
+                     </ul>
+                  </div>
+                  <ul class="s-12 l-2">
+                     <li class="logo hide-s hide-m">
+                        <a href="#">{% block cont1 %}{% endblock %}<br/><strong>{% block cont2 %}{% endblock %}</strong></a>
+                     </li>
+                  </ul>
+                  <div class="top-nav s-12 l-5">
+                     <ul class="top-ul chevron">
+                        <li><a href="../design/gallery.html"><br>Gallery</a>
+                        </li>
+                        <li><a href="/discussion/">Discussion & <br> Grievances </a></li>
+                       <li>
+                           <a><br>Hostels</a>
+                           <ul>
+                              <li><a href="#"><br>Dhanrajgiri</a></li>
+                              <li><a href="#"><br>C.V Raman</a></li>
+                              <li><a href="#"><br>Ramanujan</a></li>
+                              <li><a href="#"><br>S.N Bose</a></li>
+                              <li><a href="#"><br>Aryabhatta</a></li>
+                             </li>
+                           </ul>
+                        </li>
+                        <li><a href="/contact/"><br>Contact</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+
+
+
+
+       {% block content %}
+
+
+              <!-- WRITE YOUR CODE BETWEEN THESE TWO LINE  -->
+
+
+       {% endblock %}
+
+
+
+
+      <section id="abt">
+      	<div id="fourth-block">
+            <div class="line">
+               <div id="owl-demo2" class="owl-carousel owl-theme">
+                  <div class="item">
+                     <h2><a href="/about/">About Us</a> </h2>
+                     <p class="s-12 m-12 l-8 center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                     </p>
+                  </div>
+                  <div class="item">
+                     <h2>Contacts</h2>
+                     <p class="s-12 m-12 l-8 center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                     </p>
+                  </div>
+                 </div>
+            </div>
+         </div>
+      </section>
+     <footer>
+         <div class="line">
+            <div class="s-12 l-6">
+               <p>Copyright &copy;, IIT BHU
+               </p>
+            </div>
+            <div class="s-12 l-6">
+               <p class="right">
+                  <a class="right" href="http://iitbhu.ac.in/" >Design and coding by _ Team</a>
+               </p>
+            </div>
+         </div>
+      </footer>
+
+       <script type="text/javascript" src="{% static "base/owl-carousel/owl.carousel.js" %}" ></script>
+      <script type="text/javascript">
+         jQuery(document).ready(function($) {
+           $("#owl-demo").owlCarousel({
+         	slideSpeed : 300,
+         	autoPlay : true,
+         	navigation : false,
+         	pagination : false,
+         	singleItem:true
+           });
+           $("#owl-demo2").owlCarousel({
+         	slideSpeed : 300,
+         	autoPlay : true,
+         	navigation : false,
+         	pagination : true,
+         	singleItem:true
+           });
+         });
+
+      </script>
+</body>
+</html>
